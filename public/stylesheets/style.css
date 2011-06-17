@@ -1,0 +1,42 @@
+/*  Custom Styles for Job Tracker */
+/*----------------------------------------------------------------------------*/
+
+.black_background {
+  background: #000;
+}
+.gray_text {
+  color: #cccccc;
+}
+.actions {
+  text-align: center;
+}
+
+table td {
+  border: none;
+  border-bottom: 1px solid #cccccc;
+}
+
+table td.t_name {
+  background-color: #fff;
+  font-weight: bold;
+  text-align: right;
+  width: 35%;
+}
+
+table td.t_value {
+  background-color: #fff;
+}
+
+.field_with_errors {
+  display: inline-block; width: auto; margin: 0 0 10px 0;
+
+  /*IE Garbage for inline block*/
+  zoom:1; *display: inline;
+  padding: 2px;
+  background-color: red;
+}
+.field_with_errors label {
+  width: 8.2em;
+  text-align: right;
+  color: #fff;
+}
