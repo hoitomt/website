@@ -1,2 +1,10 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<div class="grid_16" style="height:50px;"></div>
+<div class="grid_16">
+  <div style="padding: 0 150px 0 150px;">
+    <% 16.times do |i| %>
+      <div id="box<%= i + 1 %>" class="color_box">
+        This is box <%= i + 1 %>
+      </div>
+    <% end %>
+  </div>
+</div>

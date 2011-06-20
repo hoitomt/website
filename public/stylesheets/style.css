@@ -1,6 +1,13 @@
 /*  Custom Styles for Job Tracker */
 /*----------------------------------------------------------------------------*/
 
+.color_box{
+  height:100px;
+  width: 100px;
+  margin: 5px 5px 5px 5px;
+  float: left;
+}
+
 .black_background {
   background: #000;
 }
