@@ -1,5 +1,9 @@
 HoitomtCom::Application.routes.draw do
   root :to => 'pages#index'
+  match '/consulting' => 'pages#consulting', :as => 'consulting'
+  match '/contact' => 'pages#contact', :as => 'contact'
+  match '/projects' => 'pages#projects', :as => 'projects'
+  match '/resume' => 'pages#resume', :as => 'resume'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -2,10 +2,28 @@
 /*----------------------------------------------------------------------------*/
 
 .color_box{
-  height:100px;
-  width: 100px;
-  margin: 5px 5px 5px 5px;
+  display: block;
+  height:150px;
+  width: 150px;
+  margin: 5px;
   float: left;
+  text-align: center;
+  font-family: "Verdana";
+  font-size: 20px;
+  color: #fff;
+}
+
+.box_text {
+  margin: 60px 0 0 0;
+}
+
+.title_box{
+  display: block;
+  height: 150px;
+  width: 310px;
+  margin: 5px;
+  float: left;
+  background: url(/images/logo_black_trans_300_150.png) no-repeat;
 }
 
 .black_background {
