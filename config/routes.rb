@@ -1,6 +1,6 @@
 HoitomtCom::Application.routes.draw do
-  root :to => 'pages#index'
-  match '/consulting' => 'pages#consulting', :as => 'consulting'
+  root :to => 'main#index'
+  match '/about' => 'pages#about', :as => 'about'
   match '/contact' => 'pages#contact', :as => 'contact'
   match '/projects' => 'pages#projects', :as => 'projects'
   match '/resume' => 'pages#resume', :as => 'resume'

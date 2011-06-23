@@ -1,8 +1,6 @@
 class PagesController < ApplicationController
-  def index
-  end
 
-  def consulting
+  def about
   end
 
   def contact

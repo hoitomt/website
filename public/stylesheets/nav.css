@@ -116,10 +116,10 @@ ul.main li ul li a:hover {
   color:#fff;
   background:#555;
 }
-ul.main li:hover a {
-  color:#fff;
-  background:#555;
-}
+ul.main li:hover a { color:#fff; background:#555;}
+ul.main li.logo:hover a  {color:#fff; background:#000;}
+
+
 ul.main li:hover ul li a {color:#fff;}
 ul.main li:hover ul li a:hover {color:#fff; background:#444;}
 ul.main li:hover a:active {background:#444;}

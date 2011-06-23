@@ -1,6 +1,100 @@
-<%#
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
-%>
+<div class="grid_6">
+  <h2 style="margin-top: 0;">Michael Hoitomt</h2>
+</div>
+<div class="grid_4" style="text-align:right;">
+  <%= link_to 'print version', resume_path(:format => "pdf") %>
+</div>
+<div class="clear"></div>
+<div class="grid_10 resume">
+  1316 White Pine Dr<br />
+  Eau Claire, WI 54701<br />
+  (715) 225-2615<br />
+  <%= link_to 'mike@hoitomt.com', contact_path %><br />
+  <br />
+  <h3>PROFESSIONAL EXPERIENCE</h3>
+  <strong>J2EE Application Developer - UnitedHealth Group</strong>
+  <ul>
+    <li>Responsible for the development and support
+      of the administration system for Medicare Membership. The system administers
+      the HIPAA protected member information for more than 6 million members. It
+      performs the enrollment, billing, and fulfillment functions as well as
+      interfacing to multiple external clients including Centers for
+      Medicare and Medicaid Services.
+    </li>
+    <li>
+      Work in a team of 8 people. Responsible for working
+      on phases of software life cycle like model designing, implementation,
+      coding, testing etc. work on platforms like SOA architecture, messaging,
+      web services and ESB. Also work on the database, XML and EJB.
+    </li>
+    <li>
+      Develop various message based processes using JMS and end-to-end SOAP
+      Web Services from consumer end-point to database persistence
+    </li>
+    <li>
+      Create and maintain ORACLE SQL scripts and stored procedures
+    </li>
+    <li>
+      Provide technical support and root cause analysis to business partners
+    </li>
+  </ul>
+  <br />
+  <strong>Ruby on Rails Application Developer - Freelance</strong>
+  <ul style="margin-left: 5px;">
+    <li>
+      Develop and maintain web-based, database-driven Ruby on Rails applications for
+      <%= link_to 'external clients', projects_path %>. Responsible for new site
+      creation as well as maintenance of existing sites.
+    </li>
+    <li>
+      Integrated existing web application into Facebook using iFrames
+    </li>
+    <li>
+      Developed mobile version of web application for display on smartphones
+      and other mobile devices.
+    </li>
+    <li>
+      Utilized git and Heroku for version control and web hosting. Also utilized
+      Amazon S3 from within ROR projects.
+    </li>
+  </ul>
+  <br />
+  <strong>Project Manager and Business Analyst - UnitedHealth Group</strong>
+  <ul>
+    <li>
+      Manage projects and perform root-cause analysis and resolution of
+      production issues for Medicare Billing and Enrollment
+    </li>
+  </ul>
+  <br />
+  <strong>Mechanical Engineer - Goodrich Aerospace</strong>
+  <ul>
+    <li>Design aircraft sensors for harsh environments.</li>
+  </ul>
+  <br />
+  <h3>Technical Skills</h3>
+  <ul>
+    <li>2 years of experience in web based applications utilizing Ruby on Rails</li>
+    <li>2 years of experience in java software development</li>
+    <li>2 years of experience in web based applications utilizing struts, java, and j2ee</li>
+    <li>Deep knowledge of object oriented programming and software development life cycle</li>
+    <li>Profound ability to work on server side java programming</li>
+    <li>Proficient database, SQL and oracle skills</li>
+    <li>Comfortable working on mac, windows, linux</li>
+  </ul>
+  <br />
+  <h3>Education</h3>
+  <strong>Master of Business Administration - University of Wisconsin Eau Claire</strong>
+  <p>Graduated May 2008</p>
+  <strong>Bachelors of Science - Mechanical Engineering - University of Wisconsin Madison</strong>
+  <p>Graduated December 1998</p>
+  <strong>Software Engineering - Harvard University Extension</strong>
+  <ul>
+    <li>Core classes in Java programming</li>
+  </ul>
 
-<%= "resume.html" %>
+</div>
+
+<%= javascript_tag do %>
+
+<% end %>
