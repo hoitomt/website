@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Hoitomt Virtual Garage Sale</title>
+		<%= stylesheet_link_tag 'garage_sale/layout_style'%>
+		
+		<%= yield :script %>
+	</head>
+<body>
+<!--Header Background Part Starts -->
+<div id="header-bg">
+	<!--Header Contant Part Starts -->
+	<div id="header">
+		<%= link_to image_tag("layout_images/logo_virtual_garage_sale.gif"), root_path %>
+		<br class="spacer" />
+	</div>
+	<!--Header Contant Part Ends -->
+</div>
+<!--Header Background Part Ends -->
+<!--Navigation Background Part Starts -->
+<div id="navigation-bg">
+	<!--Navigation Part Starts -->
+	<div id="navigation">
+		<%= render :partial => 'layouts/products_navigation_menu' %>
+		
+		<br class="spacer" />
+		<br class="spacer" />
+	</div>
+	<!--Navigation Part Ends -->
+	<!--Notification Background Part Starts-->
+	<div id="notification">
+		<div id="notice"><%= flash[:notice] %></div>
+		<%= flash[:message] %>
+		<%= flash[:warning] %>
+	</div>
+<!--Notification Background Part Ends -->
+</div>
+<!--Navigation Background Part Ends -->
+
+<!--Our Company Bacground Part Starts -->
+
+<div id="content-bg">
+	<%= yield %>
+</div>
+<!--Our Company Bacground Part Ends -->
+
+<div id="footer-bg">
+	<!--Footer Menu Part Starts -->
+	<div id="footer-menu">
+		<br class="spacer" />
+		<p class="copyright"></p>
+</div>
+	<!--Footer Menu Part Ends -->
+</div>
+<!--Footer Part Ends -->
+</body>
+</html>

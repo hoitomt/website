@@ -74,3 +74,30 @@ table td.t_value {
   text-align: right;
   color: #fff;
 }
+
+@media print{
+  body{
+    background-color:#fff;
+  }
+
+  h2 h3 {
+    margin-top: 5px;
+    margin-bottom: 0px;
+  }
+
+  .demographics{
+    text-align: center;
+  }
+
+  .container_print {
+    width: auto;
+  }
+
+  #nav {
+    display: none;
+  }
+  
+  #resume_link{
+    display: none;
+  }
+}

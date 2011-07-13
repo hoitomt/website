@@ -1,0 +1,34 @@
+<div id="subPage-main">
+	<%= image_tag @product.photo.url(:medium) %>
+	<h1>Send a question regarding <%= @product.name %></h1>
+	<% form_for :message, :url => { :action => 'send_inquire_email', :id => @product.id} do |m| %>
+		<% if m.errors.any? %>
+		  <div id="error_explanation">
+		    <h2><%= pluralize(m.errors.count, "error") %> prohibited this service_form from being saved:</h2>
+
+		    <ul>
+		    <% m.errors.full_messages.each do |msg| %>
+		      <li><%= msg %></li>
+		    <% end %>
+		    </ul>
+		  </div>
+		<% end %>
+	  <p>
+	    <strong>Name: </strong><%= m.text_field :name %>
+	  </p><br />
+	  <p>
+	  	<strong>Email: </strong><%= m.text_field :email %>
+	  </p><br />
+	  <p>
+	  	<strong>Phone Number: </strong><%= m.text_field :phone %>
+	  </p><br />
+	  <p>
+	  	<strong>Message: </strong><br />
+		<%= m.text_area :message, :rows => 5, :cols => 25 %>
+	  </p><br />
+	  <p>
+	  	<%= m.submit 'Send Message' %>
+	  </p>
+	<% end %>
+	<%= link_to 'Cancel', :back %>
+</div>

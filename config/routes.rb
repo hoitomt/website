@@ -1,9 +1,12 @@
 HoitomtCom::Application.routes.draw do
-  root :to => 'main#index'
+  root :to => 'products#display'
+  # root :to => 'main#index'
   match '/about' => 'pages#about', :as => 'about'
   match '/contact' => 'pages#contact', :as => 'contact'
   match '/projects' => 'pages#projects', :as => 'projects'
   match '/resume' => 'pages#resume', :as => 'resume'
+  
+  resources :products
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

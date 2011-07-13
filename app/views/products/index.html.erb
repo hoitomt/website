@@ -1,0 +1,27 @@
+<div id="subPage-main">
+	<h1>Items For Sale</h1>
+	
+	<h2><%= link_to 'New product', new_product_path %></h2>
+	<br />
+	<% count = 1 %>
+	<table>
+		<tr>
+	<% @products.each do |product| %>
+		<td style="padding:5px;">
+			<%= image_tag product.photo.url(:medium) %><br />
+			<h2 style="display:inline;">Name: </h2><%= product.name %> <br />
+			<h2 style="display:inline;">Description: </h2><%= product.description %><br />
+			<h2 style="display:inline;">Price: </h2><%= number_to_currency(product.price) %><br />
+			<%= link_to 'Show', product %>|<%= link_to 'Edit', edit_product_path(product) %>|
+			<%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %>
+		</td>
+	  <% if count%3 != 0 %>
+	  
+	  <% else %>
+	  	</tr>
+	  <% end
+		count += 1 %>
+	  
+	<% end %>
+	</table>
+</div>
