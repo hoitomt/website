@@ -9,3 +9,4 @@ gem 'pdfkit'
 
 # Garage Sale
 gem 'paperclip'
+gem 'aws-s3'
