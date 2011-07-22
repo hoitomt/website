@@ -1,0 +1,31 @@
+<%= content_for :app_head do %>
+	<%= javascript_tag do %>
+		$(function() {
+			$('#contact_phone').mask("(999) 999-9999");
+		});
+	<% end %>
+<% end %>
+
+<%= form_for(@contact) do |f| %>
+	<%= render 'shared/error_messages', :target => @contact %>
+	<br />
+  <div class="field">
+    <%= f.label :name %><%= mark_required(@contact, :name) %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><%= mark_required(@contact, :email) %>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %>&nbsp;
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field" style="height: 210px;">
+    <%= f.label :message %><%= mark_required(@contact, :message) %>
+    <%= f.text_area :message, :rows => 15 %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Send Message" %>
+  </div>
+<% end %>

@@ -66,13 +66,50 @@ table td.t_value {
 
   /*IE Garbage for inline block*/
   zoom:1; *display: inline;
-  padding: 2px;
   background-color: red;
+}
+.flash {
+	padding: 1em 0 0 0;
+	font-size: 125%;
 }
 .field_with_errors label {
   width: 8.2em;
   text-align: right;
   color: #fff;
+}
+.field * {
+	vertical-align: top;
+}
+.field {
+	position: relative;
+	height: auto;
+	margin: 0 0 .5em 0;
+}
+.field_with_errors{
+	margin-bottom: 0;
+}
+.field label,
+.field_with_errors label {
+	display: inline-block;
+	width: 60px;
+	text-align: right;
+}
+.field_with_errors label {
+	padding: 2px;
+}
+.field input,
+.field textarea,
+.field_with_errors input,
+.field_with_errors textarea {
+	position: absolute;
+	left: 70px;
+	display: inline-block;
+	width: 300px;
+	text-align: left;
+	padding: 0;
+}
+#errorExplanation h2{
+	font-size: 14px;
 }
 
 @media print{

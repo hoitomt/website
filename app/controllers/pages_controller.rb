@@ -1,15 +1,15 @@
 class PagesController < ApplicationController
 
   def about
-  end
-
-  def contact
+    @title = "About Me"
   end
 
   def projects
+    @title = "Projects"
   end
 
   def resume
+    @title = "Resume"
   end
 
 end
