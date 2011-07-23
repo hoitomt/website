@@ -1,6 +1,82 @@
-<%#
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
-%>
-
-<%= "projects.html" %>
+<h2>Projects</h2>
+<div class="grid_8">
+	<%= link_to image_tag('projects/cvh4h_all_400x350.png', :alt => 'CVH4H'), 
+							'http://www.cvh4h.org',
+							:target => "_blank" %>
+</div>
+<div class="grid_8 project">
+	<br />
+	<h3>Chippewa Valley Habitat for Humanity</h3>
+	<ul>
+		<li>Webmaster for cvh4h.org - Designed and built from the ground up. The site
+				started out as a Ruby 1.8.6 / Rails 2.3.7 application but has been upgraded
+				to 1.9.2 / 3.0. The site uses the spreadsheet gem. JQuery is used for the picture
+				carousel.</li>
+		<li>Displays upcoming workshops and allows users to view and sign-up for upcoming 
+				workshops. Site admins can print out class rosters in excel format</li>
+		<li>Tracks user profiles where users can create and maintain volunteer profiles. Site admins can
+				print out an excel based list of volunteers and their skills</li>
+		<li>Interfaces with Paypal to accept donations</li>
+		<li>Provides a central location for CVH4H information and documents</li>
+	</ul>
+</div>
+<div class="clear"></div>
+<div class="grid_8 project">
+	<h3>My Garage Sale Online</h3>
+	<ul>
+		<li>Webmaster for mygaragesaleonline.net - Designed and built from the ground up. The 
+				site is a 1.9.2 / 3.0 site that uses the will-paginate, aws-s3, and paperclip gems
+				along with RMagick. JQuery lightboxes are used for product display and other JQuery 
+				bits are used for highlighting changes.  AJAX is used for updating the card.
+				All images are stored in Amazon's Simple Storage Solution (S3)</li>
+		<li>A user manager lets users create an online store with a list of of products and product
+			 	attributes. Through the manager users can upload images, add descriptions, and categorize
+				items.</li>
+		<li>A user facing store is presented for each garage sale. Each store provides search,
+				category filtering, and an inquiry cart. Shoppers can use the inquiry cart to create
+				a list of items and then send the list to the store owner.</li>
+	</ul>
+</div>
+<div class="grid_8">
+	<%= link_to image_tag('projects/mgso_all_400x350.png', :alt => 'My Garage Sale Online'), 
+							'http://www.mygaragesaleonline.net',
+							:target => "_blank" %>
+</div>
+<div class="clear"></div>
+<div class="grid_8">
+	<%= link_to image_tag('projects/marcons_all_400x350.png', :alt => 'Marcons Home Improvement'), 
+							'http://www.marconshomeimprovement.com',
+							:target => "_blank" %>
+</div>
+<div class="grid_8 project">
+	<br /><br />
+	<h3>Marcon's Home Improvement</h3>
+	<ul>
+		<li>Webmaster for marconshomeimprovement.com - Designed and built from the ground up. The 
+				site is a 1.9.2 / 3.0 site. JQuery is used for the picture gallery</li>
+		<li>Displays an overview of projects that the business has done.  A picture gallery
+				give users a way to view different examples of their work</li>
+		<li>A contact form gives users a way to contact the business.  Upon sending the form 
+				an email is sent to the business owner.</li>
+	</ul>
+</div>
+<div class="clear"></div>
+<div class="grid_8 project">
+	<br /><br />
+	<h3>Peppermint Park</h3>
+	<ul>
+		<li>On-Going Paid Contract - Developed various enhancements for the site. The 
+				site is a 1.8.6 / 2.3.10 site.</li>
+		<li>Checkbox/link filters. Gives users a way to select specific 
+				filters (style, price, size, brand) to reduce the list of products being displayed</li>
+		<li>Breadcrumbs: The breadcrumb give users an overview of what filters have been applied and allows
+				users to progressively remove filters</li>
+		<li>Facebook Integration: Integrated the site into a facebook application using an iFrame</li>
+		<li>Mobile Version: Developed a customized view of the site for mobile devices</li>
+	</ul>
+</div>
+<div class="grid_8">
+	<%= link_to image_tag('projects/peppermint_park_all_400x350.png', :alt => 'Peppermint Park'), 
+							'http://www.peppermintpark.com',
+							:target => "_blank" %>
+</div>

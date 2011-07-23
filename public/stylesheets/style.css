@@ -16,16 +16,24 @@
 .box_text {
   margin: 60px 0 0 0;
 }
-
+/*--- Resume List ---*/
 .resume ul{
   margin-left: 5px;
   
 }
-
 .resume ul li {
   list-style: square;
 }
-
+/*--- Project List ---*/
+.project {
+	font-size: 14px;
+}
+.project ul{
+	margin-left: 5px;
+}
+.project ul li {
+	list-style: square;
+}
 .title_box{
   display: block;
   height: 150px;
