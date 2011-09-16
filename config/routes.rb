@@ -1,11 +1,11 @@
 HoitomtCom::Application.routes.draw do
-
-  root :to => 'products#display'
+  root :to => 'main#index'
   # root :to => 'main#index'
   match '/main' => 'main#index', :as => 'main'
   match '/about' => 'pages#about', :as => 'about'
   match '/projects' => 'pages#projects', :as => 'projects'
   match '/resume' => 'pages#resume', :as => 'resume'
+  match '/garage_sale' => 'products#display'
 
   resources :products
   resources :contacts
