@@ -6,7 +6,8 @@ gem 'rake', '0.8.7'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'jquery-rails'
 gem 'sass'
-gem 'pdfkit'
+# gem 'pdfkit'
+gem 'doc_raptor'
 
 # Garage Sale
 gem 'paperclip'

@@ -24,3 +24,5 @@ HoitomtCom::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 end
 
+DocRaptor.api_key "itTA3ES1CT5i1iF4vYAs"
+
