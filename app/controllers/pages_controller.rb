@@ -28,7 +28,8 @@ class PagesController < ApplicationController
   end
   
   private
-  def is_production?
-    @is_production = Rails.env.production?
-  end
+    def is_production?
+      @is_production = false
+      @is_production = true if Rails.env.production?
+    end
 end
