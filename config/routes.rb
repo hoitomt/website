@@ -2,8 +2,10 @@ HoitomtCom::Application.routes.draw do
   root :to => 'main#index'
   # root :to => 'main#index'
   match '/main' => 'main#index', :as => 'main'
+  match '/about_print' => 'pages#about_pdf', :as => 'about_print'
   match '/about' => 'pages#about', :as => 'about'
   match '/projects' => 'pages#projects', :as => 'projects'
+  match '/resume_print' => 'pages#resume_pdf', :as => 'resume_print'
   match '/resume' => 'pages#resume', :as => 'resume'
   match '/garage_sale' => 'products#display'
 
