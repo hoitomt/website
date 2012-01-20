@@ -29,7 +29,11 @@ class PagesController < ApplicationController
   
   private
     def is_production?
+      if Rails.env.development?
+        logger.info("Development")
+      end
       @is_production = false
       @is_production = true if Rails.env.production?
+      logger.info("Is Production: #{@is_production}")
     end
 end
