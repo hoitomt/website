@@ -35,13 +35,8 @@ GEM
       xml-simple
     builder (2.1.2)
     cocaine (0.1.0)
-    doc_raptor (0.2.2)
-      httparty (>= 0.4.3)
     erubis (2.6.6)
       abstract (>= 1.0.0)
-    httparty (0.8.1)
-      multi_json
-      multi_xml
     i18n (0.6.0)
     jquery-rails (1.0.12)
       railties (~> 3.0)
@@ -52,13 +47,12 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
-    multi_json (1.0.4)
-    multi_xml (0.4.1)
     paperclip (2.3.15)
       activerecord (>= 2.3.0)
       activesupport (>= 2.3.2)
       cocaine (>= 0.0.2)
       mime-types
+    pdfkit (0.5.2)
     polyglot (0.3.1)
     rack (1.2.3)
     rack-mount (0.6.14)
@@ -94,9 +88,9 @@ PLATFORMS
 
 DEPENDENCIES
   aws-s3
-  doc_raptor
   jquery-rails
   paperclip
+  pdfkit
   rails (= 3.0.3)
   rake (= 0.8.7)
   sass

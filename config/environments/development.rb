@@ -23,6 +23,3 @@ HoitomtCom::Application.configure do
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
 end
-
-DocRaptor.api_key "itTA3ES1CT5i1iF4vYAs"
-
