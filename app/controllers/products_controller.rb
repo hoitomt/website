@@ -4,7 +4,14 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.xml
   def index
-    @products = Product.all
+    @categories = Category.all
+    @products = {}
+    @categories.each do |c|
+      products_by_category = c.products
+      @products[c.id.to_s] = products_by_category
+    end
+    @products = Product.all if @products.nil?
+    logger.info(@products)
 
     respond_to do |format|
       format.html # index.html.erb

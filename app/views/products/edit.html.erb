@@ -56,6 +56,10 @@
 						<%= f.label :price %>
 						<%= f.text_field :price %>
 					</li>
+					<li>
+						<%= f.label :category %>
+						<%= f.collection_select :category_id, Category.all, :id, :name, :prompt => true %>
+					</li>
 				</ol>
 			</fieldset>
 			<fieldset>

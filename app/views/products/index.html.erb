@@ -33,11 +33,25 @@
 			</span>
 		</h2>
 		<div id="ts-display-portfolio">
-			<ul id="ts-display-pf-col-3">
-				<% @products.each do |product| %>
-					<li><%= render 'product_display', :product => product %></li>
-				<% end %>
-			</ul>
+			<% @categories.each do |category| %>
+				<% products = @products[category.id.to_s] %>
+					<h2><%= category.name %></h2>
+				<% if products %>
+					<ul id="ts-display-pf-col-3">
+						<% count = 0 %>
+						<% products.each do |product| %>
+							<% count += 1%>
+							<li><%= render 'product_display', :product => product %></li>
+							<% if count % 3 == 0 %>
+								<div class="clear"></div>
+							<% end %>
+						<% end %>
+					</ul>
+				<% else %>
+					<!-- Do Nothing -->
+				<% end %>	
+				<div class="clear"></div>
+			<% end %>
 		</div><!-- ts-display-portfolio -->
 	</div>
 </div>

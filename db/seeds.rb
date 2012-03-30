@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+if Category.count == 0
+  Category.create!(:name => "Jewelry")
+  Category.create!(:name => "Clothing")
+  Category.create!(:name => "Other")
+end

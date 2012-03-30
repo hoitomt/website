@@ -84,7 +84,8 @@ form.pretty-form fieldset fieldset label:hover {
 	cursor:pointer;
 }
 form.pretty-form input:not([type=radio]),
-form.pretty-form textarea {
+form.pretty-form textarea,
+form.pretty-form select {
 	background: #ffffff;
 	border: none;
 	-moz-border-radius: 5px;
