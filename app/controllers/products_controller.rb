@@ -43,8 +43,8 @@ class ProductsController < ApplicationController
   # POST /products.xml
   def create
     @product = Product.new(params[:product])
-    @upload_photo = Uploadphoto.find(params[:upload_file_id])
-    @product.photo = @upload_photo.photo
+    @upload_photo = Uploadphoto.find_by_id(params[:upload_file_id])
+    @product.photo = @upload_photo.photo if @upload_photo
 
     respond_to do |format|
       if @product.save
