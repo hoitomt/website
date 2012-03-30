@@ -1,8 +1,12 @@
 <div class="ts-display-pf-img centered-image">
-	<%= link_to image_tag( product.photo.url(:medium)), 
-							product.photo.url(:medium), 
-							:class => 'image',
-							:rel => "prettyPhoto[mixed]" %>
+	<% if product && product.photo_file_name %>
+		<%= link_to image_tag( product.photo.url(:medium)), 
+								product.photo.url(:medium), 
+								:class => 'image',
+								:rel => "prettyPhoto[mixed]" %>
+	<% else %>
+		<h3>No Photo Selected</h3>
+	<% end %>
 </div>
 <div class="ts-display-pf-text">
 	<h2><%=h product.name %></h2>
