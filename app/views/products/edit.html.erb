@@ -1,8 +1,67 @@
 <div id="subPage-main">
 	<h1>Editing product</h1>
 
-<%= render :partial => @product %>
-
 <%= link_to 'Show', @product %> |
 <%= link_to 'Back', products_path %>
+</div>
+
+
+<div id="header-title">
+	<div class="pattern">
+	    <h1>Edit <%= @product.name %>/h1>
+	</div>
+</div>
+<div id="main-content">
+	<div id="content" class="full">
+		<% form_for @product,
+								:html => {:class => 'pretty-form', :multipart => true} do |f| %>
+			<% if @product.errors.any? %>
+			  <div id="error_explanation">
+			    <h2><%= pluralize(@product.errors.count, "error") %> 
+							prohibited this service_form from being saved:</h2>
+			    <ul>
+				    <% @product.errors.full_messages.each do |msg| %>
+				      <li><%= msg %></li>
+				    <% end %>
+			    </ul>
+			  </div>
+			<% end %>
+			<%= hidden_field_tag 'upload_file_id', '0' %>
+			<fieldset>
+				<legend>Item Information</legend>
+				<div id="preview" class="image-preview">
+					<div id="preview-image">
+						<% if @product.photo_file_name %>
+							<%= image_tag(@product.photo.url(:medium)) %>
+						<% else %>
+							<h3>No photo has been uploaded</h3>
+						<% end %>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<ol>
+					<li>
+						<%= label_tag "Change Picture"%>
+						<%= f.file_field :photo %>
+					</li>
+					<li>
+						<%= f.label :name, %>
+						<%= f.text_field :name %>
+					</li>
+					<li>
+						<%= f.label :description %>
+						<%= f.text_area :description, :rows => 5 %>
+					</li>
+					<li>
+						<%= f.label :price %>
+						<%= f.text_field :price %>
+					</li>
+				</ol>
+			</fieldset>
+			<fieldset>
+				<%= link_to "Cancel", :back, :class => "left-button cancel-button"%>
+				<button class="button-upload right-button go-button" type="submit">Save</button>
+			</fieldset>
+		<% end %>
+	</div>
 </div>
