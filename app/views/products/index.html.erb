@@ -35,8 +35,8 @@
 		<div id="ts-display-portfolio">
 			<% @categories.each do |category| %>
 				<% products = @products[category.id.to_s] %>
-					<h2><%= category.name %></h2>
 				<% if products %>
+					<h2><%= category.name %></h2>
 					<ul id="ts-display-pf-col-3">
 						<% count = 0 %>
 						<% products.each do |product| %>
