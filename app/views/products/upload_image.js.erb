@@ -1,0 +1,2 @@
+$('#preview-image').html("<%= escape_javascript(image_tag @upload_photo.photo.url(:medium)) %>");
+$('#upload_file_id').attr('value', "<%= escape_javascript(@upload_photo.id.to_s) %>");

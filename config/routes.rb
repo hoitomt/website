@@ -1,16 +1,25 @@
 HoitomtCom::Application.routes.draw do
+  get "sessions/new"
+
+  get "session/new"
+
   root :to => 'main#index'
-  # root :to => 'main#index'
   match '/main' => 'main#index', :as => 'main'
   match '/about_print' => 'pages#about_pdf', :as => 'about_print'
   match '/about' => 'pages#about', :as => 'about'
   match '/projects' => 'pages#projects', :as => 'projects'
   match '/resume_print' => 'pages#resume_pdf', :as => 'resume_print'
   match '/resume' => 'pages#resume', :as => 'resume'
-  match '/garage_sale' => 'products#display'
-
-  resources :products
   resources :contacts
+  
+  get "log_in" => "sessions#new", :as => "log_in"
+  get "log_out" => "sessions#destroy", :as => "log_out"
+  get "sign_up" => "users#new", :as => "sign_up"
+  resources :users
+  resources :sessions
+  match '/garage_sale' => "products#index", :as => "garage_sale"
+  match '/products/upload_image' => "products#upload_image", :as => "upload_image"
+  resources :products
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

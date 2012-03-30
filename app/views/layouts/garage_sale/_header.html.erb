@@ -1,0 +1,22 @@
+<div id="top">
+	<div class="information">
+		<div id="user_nav">
+		  <% if current_user %>
+		    Logged in as <%= current_user.email %>
+		    <%= link_to "Log out", log_out_path %>
+		  <% else %>
+		    <%= link_to "Log in", log_in_path %>
+		  <% end %>
+		</div>
+	</div>
+</div><!-- end #top -->
+<div id="header">
+	<div id="logo">
+		<%= link_to image_tag("garage_sale/logos/logo_simple_sale_clean.png"), root_path %>
+  </div><!-- end #logo -->
+  <div id="topnav">
+    <ul>
+      <li><%= link_to "Main", root_path %></li>
+		</ul>
+	</div><!-- end #topnav -->
+</div><!-- end #header -->

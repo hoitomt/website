@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_filter :logged_in, :except => [:display, :index, :show]
+  
   # GET /products
   # GET /products.xml
   def index
@@ -8,10 +10,6 @@ class ProductsController < ApplicationController
       format.html # index.html.erb
       format.xml  { render :xml => @products }
     end
-  end
-  
-  def display
-    @products = Product.all
   end
 
   # GET /products/1
@@ -45,10 +43,12 @@ class ProductsController < ApplicationController
   # POST /products.xml
   def create
     @product = Product.new(params[:product])
+    @upload_photo = Uploadphoto.find(params[:upload_file_id])
+    @product.photo = @upload_photo.photo
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to(edit_product_path(@product)) }
+        format.html { redirect_to(products_path, :notice => 'Product was successfully created.') }
         format.xml  { render :xml => @product, :status => :created, :location => @product }
       else
         format.html { render :action => "new" }
@@ -105,6 +105,24 @@ class ProductsController < ApplicationController
         format.html { render :action => "inquire" }
         format.xml  { render :xml => @message.errors, :status => :unprocessable_entity }
       end
+    end
+  end
+  
+  def upload_image
+    logger.info("Uploading the image")
+    @upload_photo = Uploadphoto.new
+    @upload_photo.photo = params['imageUpload']
+    @upload_photo.save
+    respond_to do |format|
+      format.js
+      format.html
+    end
+  end
+  
+  private
+  def logged_in
+    if current_user.nil?
+      redirect_to log_in_url
     end
   end
   

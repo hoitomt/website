@@ -1,27 +1,44 @@
-<div id="subPage-main">
-	<h1>Items For Sale</h1>
-	
-	<h2><%= link_to 'New product', new_product_path %></h2>
-	<br />
-	<% count = 1 %>
-	<table>
-		<tr>
-	<% @products.each do |product| %>
-		<td style="padding:5px;">
-			<%= image_tag product.photo.url(:medium) %><br />
-			<h2 style="display:inline;">Name: </h2><%= product.name %> <br />
-			<h2 style="display:inline;">Description: </h2><%= product.description %><br />
-			<h2 style="display:inline;">Price: </h2><%= number_to_currency(product.price) %><br />
-			<%= link_to 'Show', product %>|<%= link_to 'Edit', edit_product_path(product) %>|
-			<%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %>
-		</td>
-	  <% if count%3 != 0 %>
-	  
-	  <% else %>
-	  	</tr>
-	  <% end
-		count += 1 %>
-	  
-	<% end %>
-	</table>
+<%= content_for :javascript do%>
+	<script type="text/javascript">
+
+		jQuery(document).ready(function(){
+		   /* portfolio gallery */
+			jQuery("a[rel^='prettyPhoto']").prettyPhoto({
+				animationSpeed:'slow',
+				theme:'facebook',
+				slideshow:2000
+			});
+		});
+	</script>
+<% end %>
+
+<div id="header-title">
+	<div class="pattern">
+	    <h1>Items for Sale</h1>
+	</div>
 </div>
+<% if current_user %>
+	<div style="float:right; margin-right: 10px;">
+		<h3><%= link_to 'New product', new_product_path %></h3>
+	</div>
+<% end %>	
+<div id="main-content">
+	<div id="content" class="full">
+		<h2 class="main-title">
+			<span>
+				Contact: <%= mail_to email, 
+														 "E-Mail (#{email})",
+														:subject => 'Question about the Hoitomt Virtual Garage Sale' %>
+			  or call Amy Hoitomt at <%= phone %>
+			</span>
+		</h2>
+		<div id="ts-display-portfolio">
+			<ul id="ts-display-pf-col-3">
+				<% @products.each do |product| %>
+					<li><%= render 'product_display', :product => product %></li>
+				<% end %>
+			</ul>
+		</div><!-- ts-display-portfolio -->
+	</div>
+</div>
+

@@ -33,6 +33,7 @@ GEM
       builder
       mime-types
       xml-simple
+    bcrypt-ruby (3.0.1)
     builder (2.1.2)
     cocaine (0.1.0)
     erubis (2.6.6)
@@ -88,6 +89,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-s3
+  bcrypt-ruby
   jquery-rails
   paperclip
   pdfkit

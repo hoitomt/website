@@ -1,49 +1,31 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-		<title>Hoitomt Virtual Garage Sale</title>
-		<%= stylesheet_link_tag 'garage_sale/layout_style'%>
+	  <title>Simple Sale</title>
+		<%= render 'layouts/garage_sale/stylesheets'%>
 	  <%= javascript_include_tag :defaults %>
+	  <%= javascript_include_tag 'fade', 
+															 'jquery-ui.min', 
+															 'jquery.cycle.all.min', 
+															 'jquery.prettyPhoto' %>
 	  <%= csrf_meta_tag %>
-
-		<%= yield :script %>
-	</head>
-<body>
-	<div id="header-bg">
-		<div id="header">
-			<div style="float: left;">
-			<%= link_to image_tag("layout_images/logo_virtual_garage_sale.gif"), root_path %>
-			</div>
-			<div style="float: right;">
-				<%= link_to 'Hoitomt Profile', main_path, :style => "font-size: 12px; text-decoration: none;" %>
-			</div>
-			<br class="spacer" />
-		</div>
-	</div>
-	<div id="navigation-bg">
-		<div id="navigation">
-			<%= render :partial => 'layouts/products_navigation_menu' %>
+		<%= yield :javascript %>
 		
-			<br class="spacer" />
-			<br class="spacer" />
-		</div>
-		<div id="notification">
-			<div id="notice"><%= flash[:notice] %></div>
-				<%= flash[:message] %>
-				<%= flash[:warning] %>
-			</div>
-		</div>
-		<div id="content-bg">
-			<%= yield %>
-		</div>
+		<!-- Google Analytics -->
+		<script type="text/javascript">
 
-		<div id="footer-bg">
-			<div id="footer-menu">
-				<br class="spacer" />
-				<p class="copyright"></p>
-			</div>
+		</script>
+		
+	</head>
+	<body>
+		<div id="wrapper">
+			<%= render 'layouts/garage_sale/header' %>
+			<% flash.each do |name, msg| %>
+		    <%= content_tag :div, msg, :id => "flash#{name}" %>
+		  <% end %>
+			<%= yield %>
+			<%= render 'layouts/garage_sale/footer' %>
 		</div>
-	</div>
-</body>
+	</body>
 </html>
+

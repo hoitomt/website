@@ -1,5 +1,5 @@
 development:
-  bucket: prod_virtualgaragesale
+  bucket: hoitomt_garage_sale_dev
   access_key_id: AKIAJRZ7Q4I6MW3WMNHQ
   secret_access_key: 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
   tmp_file_directory: tmp_upload
@@ -9,7 +9,7 @@ test:
   secret_access_key: xxx
   tmp_file_directory: tmp_upload
 production:
-  bucket: prod_virtualgaragesale
+  bucket: hoitomt_garage_sale_prod
   access_key_id: AKIAJRZ7Q4I6MW3WMNHQ
   secret_access_key: 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
   tmp_file_directory: tmp_upload

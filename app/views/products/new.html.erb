@@ -1,25 +1,88 @@
-<div id="subPage-main">
-	<% form_for @product, :html => { :multipart => true } do |f| %>
-		<% if @product.errors.any? %>
-		  <div id="error_explanation">
-		    <h2><%= pluralize(@product.errors.count, "error") %> prohibited this service_form from being saved:</h2>
-
-		    <ul>
-		    <% @product.errors.full_messages.each do |msg| %>
-		      <li><%= msg %></li>
-		    <% end %>
-		    </ul>
-		  </div>
-		<% end %>
-	
-	  <h1>Upload Picture</h1>
-	  <p>You will enter Name, Description, and Price on the next page</p>
-	  <p>
-		<%= f.file_field :photo %>
-	  </p>
-	  <p>
-	    <%= f.submit 'Next' %>
-	  </p>
-	<% end %>
-	<%= link_to 'Cancel', :back %>
+<%= content_for :javascript do %>
+	<%= javascript_include_tag 'file_uploader/fileuploader' %>
+	<%= javascript_include_tag 'file_uploader/jquery.form' %>
+	<script type="text/javascript">
+		// File Upload script
+		$(document).ready(function() {
+			$('#preview').hide();
+			$('#image-uploader').ajaxForm({
+				beforeSubmit: function() {
+					$('#preview').show();
+					$('#preview-image').html('<img src="/images/garage_sale/Loading.gif">');
+				},
+				error: function() {
+					$('#preview-image').html('Error');
+				}
+			})
+		});
+	</script>
+<% end %>
+<div id="header-title">
+	<div class="pattern">
+	    <h1>New Item</h1>
+	</div>
 </div>
+<div id="main-content">
+	<div id="content" class="full">
+		<%= form_tag('/products/upload_image', 
+								 :class => 'pretty-form', 
+								 :id => 'image-uploader',
+								 :multipart => true) do %>
+			<fieldset>
+				<legend>Upload a Picture of Your Item</legend>
+				<ol>
+					<li>
+						<%= file_field_tag "imageUpload", :style => "width:300px;" %>
+					</li>
+				</ol>
+				<button class="button-upload right-button" type="submit">Upload</button>
+				
+				<div class="clear"></div>
+				<div id="preview" class="image-preview">
+					<div id="preview-image"></div>
+				</div>
+				<div class="clear"></div>
+			</fieldset>
+		<% end %>
+		<div class="clear"></div>
+		
+		<% form_for @product, 
+								:html => {:class => 'pretty-form'} do |f| %>
+			<% if @product.errors.any? %>
+			  <div id="error_explanation">
+			    <h2><%= pluralize(@product.errors.count, "error") %> 
+							prohibited this service_form from being saved:</h2>
+			    <ul>
+				    <% @product.errors.full_messages.each do |msg| %>
+				      <li><%= msg %></li>
+				    <% end %>
+			    </ul>
+			  </div>
+			<% end %>
+			<%= hidden_field_tag 'upload_file_id', '0' %>
+			<fieldset>
+				<legend>Item Information</legend>
+				<ol>
+					<li>
+						<%= f.label :name, %>
+						<%= f.text_field :name %>
+					</li>
+					<li>
+						<%= f.label :description %>
+						<%= f.text_area :description, :rows => 5 %>
+					</li>
+					<li>
+						<%= f.label :price %>
+						<%= f.text_field :price %>
+					</li>
+				</ol>
+			</fieldset>
+			<fieldset>
+				<%= link_to "Cancel", :back, :class => "left-button cancel-button"%>
+				<button class="button-upload right-button go-button" type="submit">Save</button>
+			</fieldset>
+		<% end %>
+		<%= link_to 'Cancel', :back %>
+	</div>
+</div>
+

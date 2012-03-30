@@ -8,6 +8,8 @@ gem 'jquery-rails'
 gem 'sass'
 gem 'pdfkit'
 
+gem 'bcrypt-ruby', :require => 'bcrypt'
+
 # Garage Sale
 gem 'paperclip'
 gem 'aws-s3'
