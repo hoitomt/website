@@ -13,5 +13,5 @@ gem 'pdfkit'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 
 # Garage Sale
-gem 'paperclip'
+gem 'paperclip', '2.3.15'
 gem 'aws-s3'
