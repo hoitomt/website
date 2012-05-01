@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/agentrock/gdata.git
+  revision: 271d0b49d7dbe97b16969f06104f3e91022c40bc
+  specs:
+    gdata (1.1.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -91,6 +97,7 @@ PLATFORMS
 DEPENDENCIES
   aws-s3
   bcrypt-ruby
+  gdata!
   jquery-rails
   paperclip (= 2.3.15)
   pdfkit
