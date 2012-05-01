@@ -1,0 +1,2 @@
+- Add way to delete multiple items at the same time
+- Fix it when you click on the picture so that a large version of the picture comes up in the light box

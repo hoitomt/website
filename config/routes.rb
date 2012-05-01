@@ -19,6 +19,7 @@ HoitomtCom::Application.routes.draw do
   resources :sessions
   match '/garage_sale' => "products#index", :as => "garage_sale"
   match '/products/upload_image' => "products#upload_image", :as => "upload_image"
+  match '/products/display_albums' => "products#display_albums", :as => "display_albums"
   resources :products
 
   # The priority is based upon order of creation:

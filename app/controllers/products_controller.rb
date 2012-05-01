@@ -55,7 +55,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to(products_path, :notice => 'Product was successfully created.') }
+        format.html { redirect_to(products_path) }
         format.xml  { render :xml => @product, :status => :created, :location => @product }
       else
         format.html { render :action => "new" }
@@ -123,6 +123,17 @@ class ProductsController < ApplicationController
     respond_to do |format|
       format.js
       format.html
+    end
+  end
+  
+  def display_albums
+    picasa = Picasa.new
+    @albums = picasa.picasa_albums
+    @pictures = nil
+    if params[:id] && params[:title] && params[:user]
+      logger.info("We have an album name")
+      @pictures = picasa.picasa_photos(params)
+      logger.info("Count of pictures #{@pictures.length}")
     end
   end
   
