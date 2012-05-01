@@ -120,15 +120,15 @@ USE THIS STYLE SHEET FOR INNER PAGE
    margin-left: -150px;
    margin-top: -150px;*/
 }
+.ts-display-pf-img img {
+	max-width: 280px;
+}
 
 #ts-display-pf-col-3 .ts-display-pf-img a.image{
-/*	width:286px;
-	height:153px;*/
 	display:inline-block;
 	position:relative;
 	background-color:#f1f1f1;
 	padding:5px;
-/*	float:left;*/
 }
 
 #ts-display-pf-col-3 .ts-display-pf-img a .rollover{
